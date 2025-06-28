@@ -570,7 +570,7 @@
                 <p>Potencia tu presencia online con nuestros servidores de alta performance, disponibilidad 99.9% y soporte 24/7</p>
                 <div class="hero-buttons">
                     <a href="#planes" class="btn-primary">Ver Planes</a>
-                    <a href="#" class="btn-secondary" onclick="showFreeTrialModal()">Prueba Gratis</a>
+                    <a href="https://aternos.org" target="_blank" class="btn-secondary">Prueba Gratis</a>
                 </div>
             </div>
         </div>
@@ -713,6 +713,147 @@
         </div>
     </footer>
 
+    <!-- Modals -->
+    <div id="freeTrialModal" class="modal">
+        <div class="modal-content">
+            <h3>🚀 Prueba Gratis por 30 Días</h3>
+            <p>Experimenta todo el poder de Serverus sin compromiso. Acceso completo a todas las características premium durante 30 días.</p>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="trialEmail">Email:</label>
+                    <input type="email" id="trialEmail" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="trialPlan">Plan de interés:</label>
+                    <select id="trialPlan" style="width: 100%; padding: 0.8rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: white;">
+                        <option value="starter">Starter</option>
+                        <option value="professional">Professional</option>
+                        <option value="enterprise">Enterprise</option>
+                    </select>
+                </div>
+            </div>
+            <button class="modal-close" onclick="submitFreeTrial()">Comenzar Prueba</button>
+            <button class="modal-close" onclick="closeModal('freeTrialModal')" style="background: rgba(255, 255, 255, 0.1);">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="supportModal" class="modal">
+        <div class="modal-content">
+            <h3>📞 Centro de Ayuda</h3>
+            <p>Nuestro equipo de soporte está disponible 24/7 para ayudarte con cualquier consulta técnica o comercial.</p>
+            <p><strong>Horarios:</strong> 24 horas, 7 días a la semana</p>
+            <p><strong>Tiempo de respuesta:</strong> Menos de 15 minutos</p>
+            <p><strong>Canales:</strong> Chat en vivo, Email, Teléfono</p>
+            <button class="modal-close" onclick="closeModal('supportModal')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <h3>💬 Contactar Soporte</h3>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="contactName">Nombre:</label>
+                    <input type="text" id="contactName" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email:</label>
+                    <input type="email" id="contactEmail" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactSubject">Asunto:</label>
+                    <input type="text" id="contactSubject" placeholder="¿En qué podemos ayudarte?" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Mensaje:</label>
+                    <textarea id="contactMessage" rows="4" placeholder="Describe tu consulta..."></textarea>
+                </div>
+            </div>
+            <button class="modal-close" onclick="submitContact()">Enviar Mensaje</button>
+            <button class="modal-close" onclick="closeModal('contactModal')" style="background: rgba(255, 255, 255, 0.1);">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="documentationModal" class="modal">
+        <div class="modal-content">
+            <h3>📚 Documentación</h3>
+            <p>Accede a nuestra completa documentación técnica con guías paso a paso, APIs y mejores prácticas.</p>
+            <p><strong>Incluye:</strong></p>
+            <p>• Guías de configuración<br>• API Reference<br>• Tutoriales avanzados<br>• Troubleshooting</p>
+            <button class="modal-close" onclick="closeModal('documentationModal')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="tutorialsModal" class="modal">
+        <div class="modal-content">
+            <h3>🎓 Tutoriales</h3>
+            <p>Aprende a sacar el máximo provecho de tu hosting con nuestros tutoriales en video y guías escritas.</p>
+            <p><strong>Categorías:</strong></p>
+            <p>• Primeros pasos<br>• WordPress<br>• Configuración DNS<br>• Optimización<br>• Seguridad</p>
+            <button class="modal-close" onclick="closeModal('tutorialsModal')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="statusModal" class="modal">
+        <div class="modal-content">
+            <h3>📊 Estado del Servicio</h3>
+            <p>Monitorea el estado en tiempo real de todos nuestros servicios y servidores.</p>
+            <p><strong>🟢 Todos los sistemas operando normalmente</strong></p>
+            <p>• Servidores Web: 99.99% uptime<br>• Bases de Datos: Operacional<br>• CDN: Operacional<br>• Email: Operacional</p>
+            <button class="modal-close" onclick="closeModal('statusModal')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <h3>🏢 Acerca de Serverus</h3>
+            <p>Somos una empresa líder en servicios de hosting y cloud computing, comprometida con brindar la mejor experiencia en alojamiento web.</p>
+            <p><strong>Nuestra misión:</strong> Democratizar el acceso a tecnología de hosting de clase enterprise para proyectos de cualquier tamaño.</p>
+            <p><strong>Fundada:</strong> 2020<br><strong>Clientes:</strong> +50,000<br><strong>Uptime:</strong> 99.99%</p>
+            <button class="modal-close" onclick="closeModal('aboutModal')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <h3>📝 Blog de Serverus</h3>
+            <p>Mantente actualizado con las últimas tendencias en tecnología, tutoriales técnicos y noticias de la industria.</p>
+            <p><strong>Artículos recientes:</strong></p>
+            <p>• "Optimización de WordPress para máximo rendimiento"<br>• "Guía completa de SSL/TLS"<br>• "Mejores prácticas de seguridad web"</p>
+            <button class="modal-close" onclick="closeModal('blogModal')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="careersModal" class="modal">
+        <div class="modal-content">
+            <h3>💼 Carreras en Serverus</h3>
+            <p>Únete a nuestro equipo de expertos apasionados por la tecnología y el excelente servicio al cliente.</p>
+            <p><strong>Posiciones abiertas:</strong></p>
+            <p>• Ingeniero DevOps<br>• Especialista en Soporte Técnico<br>• Desarrollador Full Stack<br>• Gerente de Producto</p>
+            <button class="modal-close" onclick="closeModal('careersModal')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <h3>📄 Términos y Condiciones</h3>
+            <p>Nuestros términos de servicio están diseñados para ser transparentes y justos tanto para Serverus como para nuestros clientes.</p>
+            <p><strong>Puntos clave:</strong></p>
+            <p>• Garantía de uptime 99.9%<br>• Política de reembolso 30 días<br>• Uso justo de recursos<br>• Soporte incluido</p>
+            <button class="modal-close" onclick="closeModal('termsModal')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <h3>🔒 Política de Privacidad</h3>
+            <p>Tu privacidad es fundamental para nosotros. Protegemos tu información personal con los más altos estándares de seguridad.</p>
+            <p><strong>Compromisos:</strong></p>
+            <p>• No vendemos datos personales<br>• Encriptación de extremo a extremo<br>• Cumplimiento GDPR<br>• Transparencia total</p>
+            <button class="modal-close" onclick="closeModal('privacyModal')">Cerrar</button>
+        </div>
+    </div>
+
     <script>
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -735,6 +876,109 @@
                 header.style.background = 'rgba(10, 10, 10, 0.98)';
             } else {
                 header.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Modal functions
+        function showFreeTrialModal() {
+            document.getElementById('freeTrialModal').style.display = 'block';
+        }
+
+        function showSupportModal() {
+            document.getElementById('supportModal').style.display = 'block';
+        }
+
+        function showContactModal() {
+            document.getElementById('contactModal').style.display = 'block';
+        }
+
+        function showDocumentationModal() {
+            document.getElementById('documentationModal').style.display = 'block';
+        }
+
+        function showTutorialsModal() {
+            document.getElementById('tutorialsModal').style.display = 'block';
+        }
+
+        function showStatusModal() {
+            document.getElementById('statusModal').style.display = 'block';
+        }
+
+        function showAboutModal() {
+            document.getElementById('aboutModal').style.display = 'block';
+        }
+
+        function showBlogModal() {
+            document.getElementById('blogModal').style.display = 'block';
+        }
+
+        function showCareersModal() {
+            document.getElementById('careersModal').style.display = 'block';
+        }
+
+        function showTermsModal() {
+            document.getElementById('termsModal').style.display = 'block';
+        }
+
+        function showPrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function submitFreeTrial() {
+            const email = document.getElementById('trialEmail').value;
+            const plan = document.getElementById('trialPlan').value;
+            
+            if (email) {
+                alert(`¡Excelente! Tu prueba gratuita del plan ${plan} ha sido activada. Revisa tu email ${email} para los detalles de acceso.`);
+                closeModal('freeTrialModal');
+                // Reset form
+                document.getElementById('trialEmail').value = '';
+                document.getElementById('trialPlan').value = 'starter';
+            } else {
+                alert('Por favor, ingresa tu email para continuar.');
+            }
+        }
+
+        function submitContact() {
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            if (name && email && subject && message) {
+                alert(`¡Gracias ${name}! Tu mensaje ha sido enviado. Nuestro equipo te contactará en menos de 15 minutos a ${email}.`);
+                closeModal('contactModal');
+                // Reset form
+                document.getElementById('contactName').value = '';
+                document.getElementById('contactEmail').value = '';
+                document.getElementById('contactSubject').value = '';
+                document.getElementById('contactMessage').value = '';
+            } else {
+                alert('Por favor, completa todos los campos para enviar tu mensaje.');
+            }
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
             }
         });
 
